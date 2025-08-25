@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>โรงเรียนเซกา | แพลตฟอร์มการศึกษา</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Prompt:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.15.0",
+    "safevalues/": "https://esm.sh/safevalues@^1.2.0/",
+    "safevalues": "https://cdn.jsdelivr.net/npm/safevalues@^1.2.0/dist/mjs/index.min.js",
+    "markdown-it": "https://esm.sh/markdown-it@^14.1.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="app-container">
+      <!-- Navigation will be injected here if needed, or kept static -->
+    </div>
+
+    <!-- Main Content Area -->
+    <main id="main-content"></main>
+
+    <!-- Floating AI Assistant Button -->
+    <button id="ai-assistant-fab" title="AI Assistant">
+      <i class="fa-solid fa-wand-magic-sparkles"></i>
+    </button>
+
+    <!-- AI Assistant Modal -->
+    <div id="ai-modal-overlay">
+      <div id="ai-modal">
+        <div id="ai-modal-header">
+          <h3>ผู้ช่วย AI (AI Assistant)</h3>
+          <button id="ai-modal-close-btn">&times;</button>
+        </div>
+        <div id="ai-modal-body">
+          <div id="ai-chat-history">
+            <div class="ai-message assistant">
+              สวัสดีครับ! มีอะไรให้ผมช่วยไหมครับ?
+            </div>
+          </div>
+          <div id="ai-loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>กำลังคิด... กรุณารอสักครู่</p>
+          </div>
+        </div>
+        <div id="ai-modal-footer">
+          <input
+            type="text"
+            id="ai-prompt-input"
+            placeholder="พิมพ์คำถามของคุณที่นี่..."
+          />
+          <button id="ai-send-btn">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
